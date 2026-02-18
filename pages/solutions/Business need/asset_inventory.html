@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Inventory Management - ForgeDefend</title>
+    <meta name="description"
+        content="Unified visibility across IT, OT, and Cloud environments. Discover, classify, and monitor assets with automated inventory management and real-time security context.">
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E">
+
+    <script type="module" async
+        src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Faethersigh8386back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+    <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+</head>
+
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-command border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 1c-3.5 0-6 2.5-6 6v2c0 1.5 1 2.5 1 4.5s-1.5 4.5-2 5.5c2 1 4 2 7 2s5-1 7-2c-.5-1-2-3.5-2-5.5s1-3 1-4.5V7c0-3.5-2.5-6-6-6zm0 2c2.5 0 4 1.5 4 4v1h-3v2h3v2c0 2-1 4.5-1 4.5s-1-.5-3-.5-3 .5-3 .5-1-2.5-1-4.5v-2h3v-2H8V7c0-2.5 1.5-4 4-4zM7 21c-1 1-2 2-3 2h16c-1 0-2-1-3-2H7z" />
+                    </svg>
+                    <a href="../../index.html"> <span
+                            class="font-headline text-heading-lg text-gradient-primary">ForgeDefend</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Platform Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Platform</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Platform Mega Menu -->
+                        <div
+                            class="absolute top-full left-0 w-[600px] bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 mega-menu">
+                            <div class="p-6">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="space-y-4">
+                                        <a href="../../Platforms/aether_sight_siem_platform.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">AetherSight</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Universal SIEM
+                                                    Platform</div>
+                                            </div>
+                                        </a>
+                                        <a href="../../Platforms/forge_circuit_otsploit.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-secondary rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">Forge Circuit</div>
+                                                <div class="font-body text-body-sm text-text-secondary">OTSploit
+                                                    Platform</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <a href="../../Platforms/ot_cemp.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-accent rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">OT CEMP</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Critical Event
+                                                    Management</div>
+                                            </div>
+                                        </a>
+                                        <a href="../../Platforms/trace_fabric_scm.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-warning rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">Trace Fabric</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Security Case
+                                                    Management</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Mega Menu -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Solutions</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Solutions Mega Menu -->
+                        <div
+                            class="absolute top-full left-0 w-[800px] bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 mega-menu">
+                            <div class="p-6">
+                                <div class="grid grid-cols-3 gap-6">
+                                    <!-- Industries -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Industries</h3>
+                                        <div class="space-y-2">
+                                            <a href="../industries.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Industries</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compliances -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Compliances</h3>
+                                        <div class="space-y-2">
+                                            <a href="../compliances.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Compliances</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Business Needs -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Business Needs</h3>
+                                        <div class="space-y-2">
+                                            <a href="asset_inventory.html"
+                                                class="block font-body text-body-lg text-primary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Asset
+                                                Inventory Management</a>
+                                            <a href="threat_detection.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Threat
+                                                Detection &amp; Response</a>
+                                            <a href="continuous_monitoring.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Continuous
+                                                Monitoring</a>
+                                            <a href="vulnerability_management.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Vulnerability
+                                                Management</a>
+                                            <a href="risk_management.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Risk
+                                                Management</a>
+                                            <a href="iiot_security.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">IIoT
+                                                Security</a>
+                                            <a href="automation & ai.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Automation
+                                                &amp; AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Company</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Company Dropdown -->
+                        <div
+                            class="absolute top-full left-0 w-64 bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 dropdown-menu">
+                            <div class="p-4">
+                                <div class="space-y-2">
+                                    <a href="../../company/partners_ecosystem.html"
+                                        class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                        <span class="font-body text-body-lg text-text-primary">Partners</span>
+                                    </a>
+                                    <a href="../../company/careers.html"
+                                        class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                        <span class="font-body text-body-lg text-text-primary">Careers</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources -->
+                    <a href="../../resources.html"
+                        class="font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Resources</a>
+
+                    <!-- Request Demo -->
+                    <a href="../../request_demo.html" class="btn-primary">Request Demo</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-text-secondary hover:text-primary transition-colors duration-300 p-2"
+                    id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden shadow-glow-primary border-t border-border" id="mobile-menu">
+            <div class="px-6 py-4 bg-surface space-y-4">
+                <!-- Mobile Platform -->
+                <div>
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-platform')">
+                        <span class="font-body text-body-lg">Platform</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-4 space-y-2 mt-2" id="mobile-platform">
+                        <a href="../../Platforms/aether_sight_siem_platform.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">AetherSight
+                            SIEM</a>
+                        <a href="../../Platforms/forge_circuit_otsploit.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">Forge
+                            Circuit</a>
+                        <a href="../../Platforms/ot_cemp.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">OT
+                            CEMP</a>
+                        <a href="../../Platforms/trace_fabric_scm.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">Trace
+                            Fabric</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Solutions -->
+                <div>
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-solutions')">
+                        <span class="font-body text-body-lg">Solutions</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-2 space-y-4 mt-2" id="mobile-solutions">
+                        <!-- Industries Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span
+                                    class="font-cta text-[10px] text-primary uppercase tracking-widest opacity-70">Industries</span>
+                            </div>
+                            <a href="../industries.html"
+                                class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                <div class="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+                                <span>All Industries</span>
+                            </a>
+                        </div>
+
+                        <!-- Compliances Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                                </svg>
+                                <span
+                                    class="font-cta text-[10px] text-secondary uppercase tracking-widest opacity-70">Compliances</span>
+                            </div>
+                            <a href="../compliances.html"
+                                class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                <div class="w-1.5 h-1.5 bg-secondary/40 rounded-full"></div>
+                                <span>All Compliances</span>
+                            </a>
+                        </div>
+
+                        <!-- Business Needs Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" />
+                                </svg>
+                                <span
+                                    class="font-cta text-[10px] text-accent uppercase tracking-widest opacity-70">Business
+                                    Needs</span>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="asset_inventory.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                                    <span>Asset Inventory</span>
+                                </a>
+                                <a href="threat_detection.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Threat Detection</span>
+                                </a>
+                                <a href="continuous_monitoring.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Continuous Monitoring</span>
+                                </a>
+                                <a href="vulnerability_management.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Vulnerability Management</span>
+                                </a>
+                                <a href="risk_management.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Risk Management</span>
+                                </a>
+                                <a href="iiot_security.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>IIoT Security</span>
+                                </a>
+                                <a href="automation%20%26%20ai.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Automation & AI Ops</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Company -->
+                <div class="mb-4">
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-company')">
+                        <span class="font-body text-body-lg">Company</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-4 space-y-2 mt-2" id="mobile-company">
+                        <a href="../../company/partners_ecosystem.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">Partners</a>
+                        <a href="../../company/careers.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">Careers</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Resources -->
+                <a href="../../resources.html"
+                    class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Resources</a>
+
+                <!-- Mobile Request Demo -->
+                <a href="../../request_demo.html"
+                    class="btn-primary-mobile block text-center py-3 rounded-lg mt-4">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-pulse">
+            </div>
+            <div
+                class="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full filter blur-3xl animate-pulse delay-1000">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="space-y-8 animate-stagger-fade">
+                <div class="space-y-4">
+                    <h1 class="font-headline text-display-xl text-gradient-primary">
+                        Asset Inventory Management
+                    </h1>
+                    <p class="font-body text-body-xl text-text-secondary max-w-4xl mx-auto">
+                        Build a continuously updated system of record for IT, OT, and Cloud assets. Discover devices
+                        automatically, enrich them with security context, and make faster decisions with trustworthy
+                        inventory.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../../request_demo.html" class="btn-primary text-lg px-8 py-4">
+                        Request Demo
+                    </a>
+                    <a href="#features" class="btn-secondary text-lg px-8 py-4">
+                        Explore Capabilities
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-display-lg text-gradient-primary mb-6">
+                    Complete Visibility. Trusted Context.
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto">
+                    Inventory is the foundation for detection, vulnerability management, risk, and compliance.
+                    ForgeDefend keeps it accurate with continuous discovery, normalization, and enrichment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="panel panel-hover p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                        </svg>
+                        <h3 class="font-headline text-heading-lg text-text-primary">Continuous Discovery</h3>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Automatically discover assets across networks, cloud accounts, endpoints, and OT segments. Track
+                        new, changed, and removed assets in near real-time.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">IT/OT/Cloud coverage</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Agentless &amp; integrated
+                                signals</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Change detection &amp; drift</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="panel panel-hover p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9V7h2v6z" />
+                        </svg>
+                        <h3 class="font-headline text-heading-lg text-text-primary">Normalization &amp; Deduplication
+                        </h3>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Consolidate data from scanners, EDR, CMDB, cloud APIs, and network telemetry. Resolve duplicates
+                        and unify asset identities with confidence.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Unified asset identity graph</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Ownership mapping</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Lifecycle tracking</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="panel panel-hover p-8">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                        <h3 class="font-headline text-heading-lg text-text-primary">Security Context Enrichment</h3>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Enrich assets with criticality, exposure, vulnerabilities, and operational context so teams can
+                        prioritize what matters and prove compliance.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Business criticality</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Exposure &amp; attack surface</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div><span
+                                class="font-body text-body-md text-text-secondary">Vuln &amp; control mapping</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-display-lg text-gradient-secondary mb-6">
+                    Inventory Built for IT, OT, and Cloud
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto">
+                    Map assets to networks, environments, identities, and processes. Understand what you have, where it
+                    lives, and how it behaves.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <h3 class="font-headline text-heading-xl text-text-primary">Inventory Capabilities</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M3 3h18v6H3V3zm0 8h18v10H3V11zm2 2v6h14v-6H5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">Hierarchical Asset Model
+                                </h4>
+                                <p class="font-body text-body-md text-text-secondary">Group assets by site, zone,
+                                    environment, application, and business unit for clean reporting and access control.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">OT-Aware Classification</h4>
+                                <p class="font-body text-body-md text-text-secondary">Identify PLCs, HMIs, engineering
+                                    workstations, and industrial devices using protocol and behavioral signals.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">Cloud Asset Graph</h4>
+                                <p class="font-body text-body-md text-text-secondary">Track accounts, IAM, compute,
+                                    containers, storage, and managed services with relationships and exposure context.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <h3 class="font-headline text-heading-xl text-text-primary">Operational Outcomes</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-warning/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">Faster Triage</h4>
+                                <p class="font-body text-body-md text-text-secondary">Respond to incidents with
+                                    immediate asset ownership, criticality, and dependency context.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-error/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-error" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L1 21h22L12 2zm1 15h-2v-2h2v2zm0-4h-2v-4h2v4z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">Reduced Attack Surface</h4>
+                                <p class="font-body text-body-md text-text-secondary">Find unmanaged, exposed, and
+                                    shadow assets so you can secure or remove them before they become entry points.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 bg-success/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-cta text-heading-md text-text-primary mb-2">Audit-Ready Reporting</h4>
+                                <p class="font-body text-body-md text-text-secondary">Generate inventory and control
+                                    evidence for IT and OT compliance initiatives with accurate, continuously updated
+                                    data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-display-lg text-gradient-primary mb-6">
+                    Integrations That Keep Inventory Accurate
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto">
+                    Connect your existing security and IT stack to enrich inventory and keep it synchronized across
+                    teams.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-heading-md text-text-primary mb-2">CMDB &amp; ITSM</h3>
+                    <p class="font-body text-body-md text-text-secondary">Sync ownership, services, and lifecycle state
+                        from IT operations tooling.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-heading-md text-text-primary mb-2">EDR &amp; NAC</h3>
+                    <p class="font-body text-body-md text-text-secondary">Strengthen identity and endpoint context with
+                        device posture and access signals.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-heading-md text-text-primary mb-2">Cloud APIs</h3>
+                    <p class="font-body text-body-md text-text-secondary">Inventory AWS, Azure, and GCP resources with
+                        relationships and security posture.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-warning/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-headline text-heading-md text-text-primary mb-2">OT Visibility</h3>
+                    <p class="font-body text-body-md text-text-secondary">Integrate OT telemetry to classify devices and
+                        track process-critical assets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-background">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <h2 class="font-headline text-display-lg text-gradient-primary">
+                    Get Inventory You Can Trust
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary">
+                    See how ForgeDefend builds a living inventory that powers detection, vulnerability management, and
+                    risk reduction across IT and OT.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../../request_demo.html" class="btn-primary text-lg px-8 py-4">
+                        Schedule Demo
+                    </a>
+                    <a href="../../resources.html" class="btn-secondary text-lg px-8 py-4">
+                        View Resources
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-border py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                        </svg>
+                        <span class="font-headline text-heading-lg text-gradient-primary">ForgeDefend</span>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary">
+                        Unified cybersecurity for critical infrastructure at the intersection of bits and atoms.
+                    </p>
+                </div>
+
+                <!-- Platform Links -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Platform</h3>
+                    <div class="space-y-2">
+                        <a href="../../Platforms/aether_sight_siem_platform.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">AetherSight
+                            SIEM</a>
+                        <a href="../../Platforms/forge_circuit_otsploit.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Forge
+                            Circuit</a>
+                        <a href="../../Platforms/ot_cemp.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">OT
+                            CEMP</a>
+                        <a href="../../Platforms/trace_fabric_scm.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Trace
+                            Fabric</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Links -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Solutions</h3>
+                    <div class="space-y-2">
+                        <a href="../industries.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Industries</a>
+                        <a href="asset_inventory.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Asset
+                            Inventory</a>
+                        <a href="threat_detection.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Threat
+                            Detection</a>
+                        <a href="risk_management.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Risk
+                            Management</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Contact</h3>
+                    <div class="space-y-2">
+                        <a href="../../request_demo.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Request
+                            Demo</a>
+                        <a href="../../company/partners_ecosystem.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Partners</a>
+                        <a href="../compliances.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Compliance</a>
+                        <a href="../../request_demo.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Contact
+                            Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-border mt-12 pt-8 flex flex-col lg:flex-row items-center justify-between">
+                <p class="font-body text-body-sm text-text-secondary">
+                    © 2026 ForgeDefend. All Rights Reserved.
+                </p>
+                <div class="flex items-center space-x-6 mt-4 lg:mt-0">
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Privacy
+                        Policy</a>
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Terms
+                        of Service</a>
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (!submenu) return;
+
+            submenu.classList.toggle('hidden');
+
+            const button = document.querySelector(`button[onclick*="toggleMobileSubmenu('${submenuId}')"]`);
+            if (button) button.classList.toggle('submenu-open', !submenu.classList.contains('hidden'));
+        }
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setMobileMenuOpen(isOpen) {
+            document.body.classList.toggle('mobile-menu-open', isOpen);
+        }
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                setMobileMenuOpen(!mobileMenu.classList.contains('hidden'));
+            });
+
+            mobileMenu.addEventListener('click', function (e) {
+                const link = e.target.closest('a');
+                if (!link) return;
+
+                mobileMenu.classList.add('hidden');
+                setMobileMenuOpen(false);
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    setMobileMenuOpen(false);
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

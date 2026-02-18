@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgeDefend - Cybersecurity for Critical Infrastructure</title>
+    <meta name="description"
+        content="Unified cybersecurity platform for critical infrastructure. Secure the intersection of bits and atoms with total visibility from cloud microservices to the factory floor.">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d4ff'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/%3E%3C/svg%3E">
+
+    <script type="module" async
+        src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Faethersigh8386back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.12"></script>
+    <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2"></script>
+</head>
+
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-command border-b border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 1c-3.5 0-6 2.5-6 6v2c0 1.5 1 2.5 1 4.5s-1.5 4.5-2 5.5c2 1 4 2 7 2s5-1 7-2c-.5-1-2-3.5-2-5.5s1-3 1-4.5V7c0-3.5-2.5-6-6-6zm0 2c2.5 0 4 1.5 4 4v1h-3v2h3v2c0 2-1 4.5-1 4.5s-1-.5-3-.5-3 .5-3 .5-1-2.5-1-4.5v-2h3v-2H8V7c0-2.5 1.5-4 4-4zM7 21c-1 1-2 2-3 2h16c-1 0-2-1-3-2H7z" />
+                    </svg>
+                    <a href="index.html"> <span
+                            class="font-headline text-heading-lg text-gradient-primary">ForgeDefend</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <!-- Platform Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Platform</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Platform Mega Menu -->
+                        <div
+                            class="absolute top-full left-0 w-[600px] bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 mega-menu">
+                            <div class="p-6">
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="space-y-4">
+                                        <a href="Platforms/aether_sight_siem_platform.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-primary rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">AetherSight</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Universal SIEM
+                                                    Platform</div>
+                                            </div>
+                                        </a>
+                                        <a href="Platforms/forge_circuit_otsploit.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-secondary rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">Forge Circuit</div>
+                                                <div class="font-body text-body-sm text-text-secondary">OTSploit
+                                                    Platform</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <a href="Platforms/ot_cemp.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-accent rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">OT CEMP</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Critical Event
+                                                    Management</div>
+                                            </div>
+                                        </a>
+                                        <a href="Platforms/trace_fabric_scm.html"
+                                            class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                            <div class="w-2 h-2 bg-warning rounded-full animate-pulse-glow"></div>
+                                            <div>
+                                                <div class="font-cta text-body-lg text-text-primary">Trace Fabric</div>
+                                                <div class="font-body text-body-sm text-text-secondary">Security Case
+                                                    Management</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solutions Mega Menu -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Solutions</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Solutions Mega Menu -->
+                        <div
+                            class="absolute top-full left-0 w-[800px] bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 mega-menu">
+                            <div class="p-6">
+                                <div class="grid grid-cols-3 gap-6">
+                                    <!-- Industries -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Industries</h3>
+                                        <div class="space-y-2">
+                                            <a href="solutions/industries.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Industries</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compliances -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Compliances</h3>
+                                        <div class="space-y-2">
+                                            <a href="solutions/compliances.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Compliances</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Business Needs -->
+                                    <div>
+                                        <h3 class="font-cta text-heading-sm text-text-primary mb-4">Business Needs</h3>
+                                        <div class="space-y-2">
+                                            <a href="solutions/Business%20need/asset_inventory.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Asset
+                                                Inventory Management</a>
+                                            <a href="solutions/Business%20need/threat_detection.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Threat
+                                                Detection & Response</a>
+                                            <a href="solutions/Business%20need/continuous_monitoring.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Continuous
+                                                Monitoring</a>
+                                            <a href="solutions/Business%20need/vulnerability_management.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Vulnerability
+                                                Management</a>
+                                            <a href="solutions/Business%20need/risk_management.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Risk
+                                                Management</a>
+                                            <a href="solutions/Business%20need/iiot_security.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">IIoT
+                                                Security</a>
+                                            <a href="solutions/Business%20need/automation%20%26%20ai.html"
+                                                class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 p-2 rounded hover:bg-surface-hover">Automation
+                                                & AI</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                            <span class="font-body text-body-lg">Company</span>
+                            <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <!-- Company Dropdown -->
+                        <div
+                            class="absolute top-full left-0 w-64 bg-surface border border-border rounded-lg shadow-glow-primary opacity-0 invisible transition-all duration-300 mt-2 z-50 dropdown-menu">
+                            <div class="p-4">
+                                <div class="space-y-2">
+                                    <a href="company/partners_ecosystem.html"
+                                        class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                        <span class="font-body text-body-lg text-text-primary">Partners</span>
+                                    </a>
+                                    <a href="company/careers.html"
+                                        class="flex items-center space-x-3 p-3 rounded hover:bg-surface-hover transition-colors duration-300">
+                                        <span class="font-body text-body-lg text-text-primary">Careers</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources -->
+                    <a href="resources.html"
+                        class="font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Resources</a>
+
+                    <!-- Request Demo -->
+                    <a href="request_demo.html" class="btn-primary">Request Demo</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-text-secondary hover:text-primary transition-colors duration-300 p-2"
+                    id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 bg-surface border-t border-border">
+                <!-- Mobile Platform -->
+                <div class="mb-4">
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-platform')">
+                        <span class="font-body text-body-lg">Platform</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-4 space-y-2" id="mobile-platform">
+                        <a href="Platforms/aether_sight_siem_platform.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">AetherSight
+                            SIEM</a>
+                        <a href="Platforms/forge_circuit_otsploit.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Forge
+                            Circuit</a>
+                        <a href="Platforms/ot_cemp.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">OT
+                            CEMP</a>
+                        <a href="Platforms/trace_fabric_scm.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Trace
+                            Fabric</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Solutions -->
+                <div class="mb-4">
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-solutions')">
+                        <span class="font-body text-body-lg">Solutions</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-2 space-y-4 mt-2" id="mobile-solutions">
+                        <!-- Industries Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span
+                                    class="font-cta text-body-xs text-primary uppercase tracking-widest">Industries</span>
+                            </div>
+                            <a href="solutions/industries.html"
+                                class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                <div class="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+                                <span>All Industries</span>
+                            </a>
+                        </div>
+
+                        <!-- Compliances Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                                </svg>
+                                <span
+                                    class="font-cta text-body-xs text-secondary uppercase tracking-widest">Compliances</span>
+                            </div>
+                            <a href="solutions/compliances.html"
+                                class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-1">
+                                <div class="w-1.5 h-1.5 bg-secondary/40 rounded-full"></div>
+                                <span>All Compliances</span>
+                            </a>
+                        </div>
+
+                        <!-- Business Needs Category -->
+                        <div class="bg-surface-hover/30 rounded-lg p-3 border border-border/50">
+                            <div class="flex items-center space-x-2 mb-3">
+                                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13 3h-2v10h2V3zm4.83 2.17l-1.42 1.42C17.99 7.86 19 9.81 19 12c0 3.87-3.13 7-7 7s-7-3.13-7-7c0-2.19 1.01-4.14 2.58-5.42L6.17 5.17C4.23 6.82 3 9.26 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9c0-2.74-1.23-5.18-3.17-6.83z" />
+                                </svg>
+                                <span class="font-cta text-body-xs text-accent uppercase tracking-widest">Business
+                                    Needs</span>
+                            </div>
+                            <div class="space-y-1">
+                                <a href="solutions/Business%20need/asset_inventory.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Asset Inventory</span>
+                                </a>
+                                <a href="solutions/Business%20need/threat_detection.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Threat Detection</span>
+                                </a>
+                                <a href="solutions/Business%20need/continuous_monitoring.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Continuous Monitoring</span>
+                                </a>
+                                <a href="solutions/Business%20need/vulnerability_management.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Vulnerability Management</span>
+                                </a>
+                                <a href="solutions/Business%20need/risk_management.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Risk Management</span>
+                                </a>
+                                <a href="solutions/Business%20need/iiot_security.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>IIoT Security</span>
+                                </a>
+                                <a href="solutions/Business%20need/automation%20%26%20ai.html"
+                                    class="flex items-center space-x-3 font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">
+                                    <div class="w-1.5 h-1.5 bg-accent/40 rounded-full"></div>
+                                    <span>Automation & AI</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Company -->
+                <div class="mb-4">
+                    <button
+                        class="w-full flex items-center justify-between text-text-secondary hover:text-primary transition-colors duration-300 py-2"
+                        onclick="toggleMobileSubmenu('mobile-company')">
+                        <span class="font-body text-body-lg">Company</span>
+                        <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="hidden pl-4 space-y-2" id="mobile-company">
+                        <a href="company/partners_ecosystem.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Partners</a>
+                        <a href="company/careers.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Careers</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Resources -->
+                <a href="resources.html"
+                    class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300 py-2">Resources</a>
+
+                <!-- Mobile Request Demo -->
+                <a href="request_demo.html" class="btn-primary w-full text-center py-2 mt-4">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 bg-gradient-command">
+            <!-- Network Topology Visualization -->
+            <div class="absolute inset-0 opacity-20">
+                <svg class="w-full h-full" viewBox="0 0 1200 800" fill="none">
+                    <!-- IT Network Nodes -->
+                    <circle cx="200" cy="200" r="4" fill="#00d4ff" class="animate-pulse-glow">
+                        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="300" cy="150" r="3" fill="#00d4ff" class="animate-pulse-glow">
+                        <animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="400" cy="180" r="5" fill="#00d4ff" class="animate-pulse-glow">
+                        <animate attributeName="r" values="5;7;5" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- OT Network Nodes -->
+                    <circle cx="600" cy="300" r="4" fill="#ffb000" class="animate-pulse-glow">
+                        <animate attributeName="r" values="4;6;4" dur="2.2s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="700" cy="250" r="3" fill="#ffb000" class="animate-pulse-glow">
+                        <animate attributeName="r" values="3;5;3" dur="2.8s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="800" cy="320" r="5" fill="#ffb000" class="animate-pulse-glow">
+                        <animate attributeName="r" values="5;7;5" dur="1.5s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- Cloud Network Nodes -->
+                    <circle cx="1000" cy="400" r="4" fill="#00ffff" class="animate-pulse-glow">
+                        <animate attributeName="r" values="4;6;4" dur="2.3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="900" cy="450" r="3" fill="#00ffff" class="animate-pulse-glow">
+                        <animate attributeName="r" values="3;5;3" dur="2.1s" repeatCount="indefinite" />
+                    </circle>
+
+                    <!-- Connection Lines -->
+                    <line x1="200" y1="200" x2="300" y2="150" stroke="#00d4ff" stroke-width="1" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="300" y1="150" x2="400" y2="180" stroke="#00d4ff" stroke-width="1" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="600" y1="300" x2="700" y2="250" stroke="#ffb000" stroke-width="1" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="700" y1="250" x2="800" y2="320" stroke="#ffb000" stroke-width="1" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="3.2s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="900" y1="450" x2="1000" y2="400" stroke="#00ffff" stroke-width="1" opacity="0.5">
+                        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.7s" repeatCount="indefinite" />
+                    </line>
+
+                    <!-- Cross-domain connections -->
+                    <line x1="400" y1="180" x2="600" y2="300" stroke="rgba(255,255,255,0.3)" stroke-width="1"
+                        stroke-dasharray="5,5">
+                        <animate attributeName="stroke-dashoffset" values="0;10" dur="2s" repeatCount="indefinite" />
+                    </line>
+                    <line x1="800" y1="320" x2="900" y2="450" stroke="rgba(255,255,255,0.3)" stroke-width="1"
+                        stroke-dasharray="5,5">
+                        <animate attributeName="stroke-dashoffset" values="0;10" dur="2.5s" repeatCount="indefinite" />
+                    </line>
+                </svg>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <!-- Main Headline -->
+                <div class="space-y-4 stagger-item">
+                    <h1 class="font-headline text-display-xl lg:text-display-xl text-gradient-primary">
+                        ForgeDefend
+                    </h1>
+                    <p class="font-body text-heading-lg text-text-secondary max-w-4xl mx-auto">
+                        Cybersecurity for Critical Infrastructure
+                    </p>
+                </div>
+
+                <!-- Subheadline -->
+                <div class="stagger-item">
+                    <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
+                        Protecting the intersection of bits and atoms. ForgeDefend unifies IT, OT, and Cloud security
+                        monitoring for comprehensive critical infrastructure protection.
+                    </p>
+                </div>
+
+                <!-- Real-time Metrics Dashboard -->
+                <div class="stagger-item">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                        <!-- IT Metrics -->
+                        <div class="panel panel-hover p-6 bg-gradient-panel">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-primary rounded-full animate-pulse-glow"></div>
+                                    <span class="font-accent text-body-sm text-primary uppercase tracking-wider">IT
+                                        Systems</span>
+                                </div>
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-accent text-display-sm text-text-primary">2,847</div>
+                                <div class="font-body text-body-sm text-text-secondary">Assets Monitored</div>
+                                <div class="mt-2 flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-success rounded-full"></div>
+                                    <span class="font-body text-body-sm text-success">99.7% Uptime</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OT Metrics -->
+                        <div class="panel panel-hover p-6 bg-gradient-panel">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-secondary rounded-full animate-pulse-glow"></div>
+                                    <span class="font-accent text-body-sm text-secondary uppercase tracking-wider">OT
+                                        Networks</span>
+                                </div>
+                                <svg class="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-accent text-display-sm text-text-primary">1,234</div>
+                                <div class="font-body text-body-sm text-text-secondary">Industrial Devices</div>
+                                <div class="mt-2 flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-success rounded-full"></div>
+                                    <span class="font-body text-body-sm text-success">Secure Operations</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Metrics -->
+                        <div class="panel panel-hover p-6 bg-gradient-panel">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-accent rounded-full animate-pulse-glow"></div>
+                                    <span class="font-accent text-body-sm text-accent uppercase tracking-wider">Cloud
+                                        Services</span>
+                                </div>
+                                <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                                </svg>
+                            </div>
+                            <div class="text-left">
+                                <div class="font-accent text-display-sm text-text-primary">567</div>
+                                <div class="font-body text-body-sm text-text-secondary">Cloud Workloads</div>
+                                <div class="mt-2 flex items-center space-x-2">
+                                    <div class="w-2 h-2 bg-success rounded-full"></div>
+                                    <span class="font-body text-body-sm text-success">Protected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="stagger-item">
+                    <div
+                        class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <button class="btn-primary text-lg px-8 py-4">
+                            Request Technical Briefing
+                        </button>
+                        <button class="btn-secondary text-lg px-8 py-4">
+                            Schedule Platform Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="stagger-item">
+                    <div class="flex items-center justify-center space-x-8 opacity-60">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                            </svg>
+                            <span class="font-body text-body-sm text-text-secondary">SOC2 Type II</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                            </svg>
+                            <span class="font-body text-body-sm text-text-secondary">ISO 27001</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                            </svg>
+                            <span class="font-body text-body-sm text-text-secondary">NERC CIP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Overview Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-display-md text-gradient-primary mb-6">
+                    Unified Security Command Center
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto">
+                    Break down silos between IT, OT, and Cloud security. One platform, complete visibility, unified
+                    response.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- AetherSight SIEM -->
+                <div class="panel panel-hover p-8 group cursor-pointer"
+                    onclick="window.location.href='aether_sight_siem_platform.html'">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3
+                                class="font-cta text-heading-lg text-text-primary group-hover:text-primary transition-colors duration-300">
+                                AetherSight SIEM</h3>
+                            <p class="font-body text-body-sm text-text-secondary">Universal Visibility Platform</p>
+                        </div>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Correlate threats across IT, OT, and Cloud environments with advanced analytics and machine
+                        learning.
+                    </p>
+                    <div
+                        class="flex items-center space-x-2 text-primary group-hover:text-accent transition-colors duration-300">
+                        <span class="font-cta text-body-sm uppercase tracking-wider">Explore Platform</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Asset Inventory -->
+                <div class="panel panel-hover p-8 group cursor-pointer"
+                    onclick="window.location.href='solutions/Business%20need/asset_inventory.html'">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center group-hover:bg-secondary/30 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3
+                                class="font-cta text-heading-lg text-text-primary group-hover:text-secondary transition-colors duration-300">
+                                Asset Inventory</h3>
+                            <p class="font-body text-body-sm text-text-secondary">Complete Asset Visibility</p>
+                        </div>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Discover, classify, and monitor all assets across your hybrid infrastructure with automated
+                        inventory management.
+                    </p>
+                    <div
+                        class="flex items-center space-x-2 text-secondary group-hover:text-accent transition-colors duration-300">
+                        <span class="font-cta text-body-sm uppercase tracking-wider">View Solution</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Industries -->
+                <div class="panel panel-hover p-8 group cursor-pointer"
+                    onclick="window.location.href='solutions/industries.html'">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center group-hover:bg-accent/30 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3
+                                class="font-cta text-heading-lg text-text-primary group-hover:text-accent transition-colors duration-300">
+                                Industry Solutions</h3>
+                            <p class="font-body text-body-sm text-text-secondary">Sector-Specific Security</p>
+                        </div>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary mb-6">
+                        Tailored security solutions for airports, utilities, maritime, and other critical infrastructure
+                        sectors.
+                    </p>
+                    <div
+                        class="flex items-center space-x-2 text-accent group-hover:text-primary transition-colors duration-300">
+                        <span class="font-cta text-body-sm uppercase tracking-wider">Explore Industries</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-display-md text-gradient-secondary mb-6">
+                    Trusted by Security Leaders
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-3xl mx-auto">
+                    Critical infrastructure organizations worldwide rely on AetherSight Command for unified security
+                    visibility.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="panel panel-hover p-8">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop&ixlib=rb-4.0.3"
+                            alt="Portrait of Michael Chen, CISO at Metropolitan Airport Authority"
+                            class="w-16 h-16 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <p class="font-body text-body-lg text-text-secondary mb-4 italic">
+                                "AetherSight Command gave us the unified visibility we desperately needed. We can now
+                                see threats across our entire infrastructure - from passenger Wi-Fi to baggage handling
+                                systems."
+                            </p>
+                            <div>
+                                <div class="font-cta text-body-lg text-text-primary">Michael Chen</div>
+                                <div class="font-body text-body-sm text-text-secondary">CISO, Metropolitan Airport
+                                    Authority</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="panel panel-hover p-8">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2"
+                            alt="Portrait of Sarah Rodriguez, Director of Cybersecurity at Regional Power Grid"
+                            class="w-16 h-16 rounded-full object-cover"
+                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div class="flex-1">
+                            <p class="font-body text-body-lg text-text-secondary mb-4 italic">
+                                "The correlation between our SCADA systems and IT network has never been clearer.
+                                AetherSight Command helps us protect critical power infrastructure with confidence."
+                            </p>
+                            <div>
+                                <div class="font-cta text-body-lg text-text-primary">Sarah Rodriguez</div>
+                                <div class="font-body text-body-sm text-text-secondary">Director of Cybersecurity,
+                                    Regional Power Grid</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Assessment CTA -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <h2 class="font-headline text-display-md text-gradient-primary">
+                    Assess Your Security Posture
+                </h2>
+                <p class="font-body text-body-xl text-text-secondary max-w-2xl mx-auto">
+                    Take our interactive security assessment to evaluate your current IT, OT, and Cloud security
+                    readiness across critical infrastructure domains.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="btn-primary text-lg px-8 py-4">
+                        Start Security Assessment
+                    </button>
+                    <button class="btn-accent text-lg px-8 py-4">
+                        Download Readiness Guide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-background border-t border-border py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z" />
+                        </svg>
+                        <span class="font-headline text-heading-lg text-gradient-primary">ForgeDefend</span>
+                    </div>
+                    <p class="font-body text-body-lg text-text-secondary">
+                        Securing the intersection of bits and atoms with unified visibility across IT, OT, and Cloud
+                        environments.
+                    </p>
+                </div>
+
+                <!-- Platform Links -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Platform</h3>
+                    <div class="space-y-2">
+                        <a href="Platforms/aether_sight_siem_platform.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">AetherSight
+                            SIEM</a>
+                        <a href="Platforms/forge_circuit_otsploit.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Forge
+                            Circuit</a>
+                        <a href="Platforms/ot_cemp.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">OT
+                            CEMP</a>
+                        <a href="Platforms/trace_fabric_scm.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Trace
+                            Fabric</a>
+                    </div>
+                </div>
+
+                <!-- Solutions Links -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Solutions</h3>
+                    <div class="space-y-2">
+                        <a href="solutions/industries.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Industries</a>
+                        <a href="solutions/Business%20need/asset_inventory.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Asset
+                            Inventory</a>
+                        <a href="solutions/Business%20need/threat_detection.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Threat
+                            Detection</a>
+                        <a href="solutions/Business%20need/risk_management.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Risk
+                            Management</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-4">
+                    <h3 class="font-cta text-heading-sm text-text-primary">Contact</h3>
+                    <div class="space-y-2">
+                        <a href="request_demo.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Request
+                            Demo</a>
+                        <a href="javascript:void(0)"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Technical
+                            Support</a>
+                        <a href="javascript:void(0)"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Sales
+                            Inquiry</a>
+                        <a href="company/partners_ecosystem.html"
+                            class="block font-body text-body-lg text-text-secondary hover:text-primary transition-colors duration-300">Partnership</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-border mt-12 pt-8 flex flex-col lg:flex-row items-center justify-between">
+                <p class="font-body text-body-sm text-text-secondary">
+                    &copy; 2026 ForgeDefend. All Rights Reserved.
+                </p>
+                <div class="flex items-center space-x-6 mt-4 lg:mt-0">
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Privacy
+                        Policy</a>
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Terms
+                        of Service</a>
+                    <a href="javascript:void(0)"
+                        class="font-body text-body-sm text-text-secondary hover:text-primary transition-colors duration-300">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Stagger animation for hero elements
+        document.addEventListener('DOMContentLoaded', function () {
+            const staggerItems = document.querySelectorAll('.stagger-item');
+            staggerItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 100}ms`;
+                item.classList.add('animate-stagger-fade');
+            });
+        });
+
+        function setMobileMenuOpen(isOpen) {
+            document.body.classList.toggle('mobile-menu-open', isOpen);
+        }
+
+        function toggleMobileSubmenu(submenuId) {
+            const submenu = document.getElementById(submenuId);
+            if (!submenu) return;
+
+            submenu.classList.toggle('hidden');
+
+            const button = document.querySelector(`button[onclick*="toggleMobileSubmenu('${submenuId}')"]`);
+            if (button) button.classList.toggle('submenu-open', !submenu.classList.contains('hidden'));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (!mobileMenuButton || !mobileMenu) return;
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+                setMobileMenuOpen(!mobileMenu.classList.contains('hidden'));
+            });
+
+            mobileMenu.addEventListener('click', function (e) {
+                const link = e.target.closest('a');
+                if (!link) return;
+                mobileMenu.classList.add('hidden');
+                setMobileMenuOpen(false);
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    setMobileMenuOpen(false);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
